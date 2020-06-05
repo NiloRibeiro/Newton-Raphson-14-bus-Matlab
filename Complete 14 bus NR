@@ -172,7 +172,7 @@ while (Tol > 1e-5)               % Iteration starting..
                 for n = 1:14
                     J2(i,k) = J2(i,k) + V(n)*(G(m,n)*cos(del(m)-del(n)) + B(m,n)*sin(del(m)-del(n)));
                 end
-                J2(i,k) = J2(i,k) + 2*V(m)*G(m,m);
+                J2(i,k) = J2(i,k) + (V(m)^2)*G(m,m);
             else
                 J2(i,k) = V(m)*(G(m,n)*cos(del(m)-del(n)) + B(m,n)*sin(del(m)-del(n)));
             end
@@ -206,7 +206,7 @@ while (Tol > 1e-5)               % Iteration starting..
                 for n = 1:14
                     J4(i,k) = J4(i,k) + V(n)*(G(m,n)*sin(del(m)-del(n)) - B(m,n)*cos(del(m)-del(n)));
                 end
-                J4(i,k) = J4(i,k) - 2*V(m)*B(m,m);
+                J4(i,k) = J4(i,k) - (V(m)^2)*B(m,m);
             else
                 J4(i,k) = V(m)*(G(m,n)*sin(del(m)-del(n)) - B(m,n)*cos(del(m)-del(n)));
             end
